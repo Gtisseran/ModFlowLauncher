@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModFlow Launcher</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 ModFlow Launcher</h1>
+      <p>Bienvenue dans ton launcher Minecraft !</p>
+    </header>
+
+    <main>
+      <!-- Écran de connexion -->
+      <section id="loginSection" class="login-section">
+        <div class="login-card">
+          <h2>🔐 Connexion</h2>
+          <p>Connecte-toi pour commencer à jouer</p>
+          <button id="loginBtn" class="btn-login">Se connecter</button>
+          <div id="loginStatus" class="login-status"></div>
+          <p class="dev-note">Mode développement actif</p>
+        </div>
+      </section>
+
+      <!-- Écran des modpacks (caché au début) -->
+      <section id="modpackSection" class="modpack-section" style="display: none;">
+        <div class="user-info">
+          <span>👤 Connecté : <strong id="username">...</strong></span>
+          <button id="logoutBtn" class="btn-logout">Déconnexion</button>
+        </div>
+        
+        <h2>Mes Modpacks</h2>
+        <div id="modpackList" class="modpack-grid">
+          <div class="modpack-card">
+            <div class="modpack-icon">📦</div>
+            <h3>Mon Premier Modpack</h3>
+            <p>Minecraft 1.20.1 • Fabric</p>
+            <button class="btn-play">Jouer</button>
+          </div>
+          <div class="modpack-card">
+            <div class="modpack-icon">⚔️</div>
+            <h3>Modpack Aventure</h3>
+            <p>Minecraft 1.19.4 • Forge</p>
+            <button class="btn-play">Jouer</button>
+          </div>
+        </div>
+        <button id="createModpack" class="btn-create">+ Créer un Modpack</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>ModFlow Launcher v1.0.0 • Open Source</p>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

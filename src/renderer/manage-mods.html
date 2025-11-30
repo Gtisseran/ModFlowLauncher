@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gérer les Mods - ModFlow</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/manage-mods.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📦 Gérer les Mods</h1>
+      <button id="backBtn" class="btn-back">← Retour</button>
+    </header>
+
+    <div class="modpack-info">
+      <h2 id="modpackName">Chargement...</h2>
+      <p id="modpackDetails"></p>
+    </div>
+
+    <main>
+      <!-- Section de recherche -->
+      <section class="search-section">
+        <div class="search-bar">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="🔍 Rechercher un mod (ex: JEI, Optifine, Sodium...)"
+          >
+          <button id="searchBtn" class="btn-search">Rechercher</button>
+        </div>
+
+        <div class="search-filters">
+          <label>
+            <input type="checkbox" id="curseforgeFilter" checked>
+            CurseForge
+          </label>
+          <label>
+            <input type="checkbox" id="modrinthFilter" checked>
+            Modrinth
+          </label>
+        </div>
+
+        <div id="searchStatus" class="search-status"></div>
+      </section>
+
+      <!-- Résultats de recherche -->
+      <section class="results-section">
+        <h3>Résultats de recherche</h3>
+        <div id="searchResults" class="results-grid">
+          <p class="no-results">Tape un nom de mod et clique sur "Rechercher"</p>
+        </div>
+      </section>
+
+      <!-- Mods installés -->
+      <section class="installed-section">
+        <h3>Mods installés (<span id="modsCount">0</span>)</h3>
+        <div id="installedMods" class="installed-grid">
+          <p class="no-mods">Aucun mod installé pour le moment</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Passer l'ID du modpack via URL
+    const urlParams = new URLSearchParams(window.location.search);
+    window.modpackId = urlParams.get('id');
+  </script>
+  <script src="js/manage-mods.js"></script>
+</body>
+</html>

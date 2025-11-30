@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un Modpack - ModFlow</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/create-modpack.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📦 Créer un Modpack</h1>
+      <button id="backBtn" class="btn-back">← Retour</button>
+    </header>
+
+    <main>
+      <div class="form-container">
+        <form id="createModpackForm">
+          <!-- Nom du modpack -->
+          <div class="form-group">
+            <label for="modpackName">Nom du Modpack *</label>
+            <input type="text" id="modpackName" placeholder="Mon Super Modpack" required>
+          </div>
+
+          <!-- Icône (emoji) -->
+          <div class="form-group">
+            <label for="modpackIcon">Icône (emoji)</label>
+            <div class="icon-selector">
+              <input type="text" id="modpackIcon" value="📦" maxlength="2">
+              <div class="icon-suggestions">
+                <span class="icon-option" data-icon="📦">📦</span>
+                <span class="icon-option" data-icon="⚔️">⚔️</span>
+                <span class="icon-option" data-icon="🌍">🌍</span>
+                <span class="icon-option" data-icon="🔥">🔥</span>
+                <span class="icon-option" data-icon="⭐">⭐</span>
+                <span class="icon-option" data-icon="🚀">🚀</span>
+                <span class="icon-option" data-icon="🎮">🎮</span>
+                <span class="icon-option" data-icon="🏰">🏰</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Version de Minecraft -->
+          <div class="form-group">
+            <label for="minecraftVersion">Version de Minecraft *</label>
+            <select id="minecraftVersion" required>
+              <option value="">Sélectionner une version</option>
+              <option value="1.20.4">1.20.4 (Latest)</option>
+              <option value="1.20.2">1.20.2</option>
+              <option value="1.20.1">1.20.1</option>
+              <option value="1.19.4">1.19.4</option>
+              <option value="1.19.2">1.19.2</option>
+              <option value="1.18.2">1.18.2</option>
+              <option value="1.17.1">1.17.1</option>
+              <option value="1.16.5">1.16.5</option>
+              <option value="1.12.2">1.12.2</option>
+              <option value="1.8.9">1.12.2</option>
+            </select>
+          </div>
+
+          <!-- Loader -->
+          <div class="form-group">
+            <label for="loaderType">Loader *</label>
+            <select id="loaderType" required>
+              <option value="">Sélectionner un loader</option>
+              <option value="fabric">Fabric</option>
+              <option value="forge">Forge</option>
+              <option value="neoforge">NeoForge</option>
+              <option value="quilt">Quilt</option>
+            </select>
+          </div>
+
+          <!-- Version du Loader -->
+          <div class="form-group">
+            <label for="loaderVersion">Version du Loader</label>
+            <input type="text" id="loaderVersion" placeholder="Dernière version (auto)">
+            <small>Laisser vide pour utiliser la dernière version</small>
+          </div>
+
+          <!-- RAM allouée -->
+          <div class="form-group">
+            <label for="ramAllocation">RAM Allouée (Mo)</label>
+            <input type="range" id="ramAllocation" min="2048" max="16384" step="512" value="4096">
+            <div class="ram-display">
+              <span id="ramValue">4096</span> Mo (<span id="ramGB">4</span> Go)
+            </div>
+          </div>
+
+          <!-- Arguments Java (optionnel) -->
+          <div class="form-group">
+            <label for="javaArgs">Arguments Java (Optionnel)</label>
+            <input type="text" id="javaArgs" placeholder="-XX:+UseG1GC -XX:+UnlockExperimentalVMOptions">
+            <small>Laisser vide pour les arguments par défaut</small>
+          </div>
+
+          <!-- Boutons -->
+          <div class="form-actions">
+            <button type="button" id="cancelBtn" class="btn-cancel">Annuler</button>
+            <button type="submit" class="btn-submit">✅ Créer le Modpack</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/create-modpack.js"></script>
+</body>
+</html>
